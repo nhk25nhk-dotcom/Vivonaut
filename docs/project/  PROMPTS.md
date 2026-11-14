@@ -178,7 +178,7 @@ Done when: from the Handover screen the ground view shows the queued report with
 
 ---
 
-## D. Judge-test checklist (run yourself before submitting)
+## D. Judge-test checklist
 - [ ] Opens offline from a double-click with the network off; no CDN, no console errors.
 - [ ] Opens directly on the dashboard; Viva greets in her panel; Guided Demo button visible in the top bar; Start a Health Check inside Viva's panel; Help (?) panel optional and dismissible; voice off.
 - [ ] Guided demo plays all three scenarios without breaking.
@@ -197,7 +197,7 @@ Done when: from the Handover screen the ground view shows the queued report with
 - [ ] Sources page complete; AI use disclosed.
 - [ ] Tested on a phone and a laptop; two browsers; with no voices available.
 
-## E. Submission checklist (Team Owner)
+## E. Submission checklist 
 - [ ] Project file/link works from a clean browser.
 - [ ] All data, tools, resources, code, text, images listed.
 - [ ] No copyrighted or restricted material (no NASA insignia, no stock photos, no real mission names with fictional crew).
@@ -205,10 +205,3 @@ Done when: from the Handover screen the ground view shows the queued report with
 - [ ] README included.
 - [ ] Submitted before Sunday 11:59 pm, with a safety margin.
 - [ ] Only the Team Owner submits.
-
-## F. Teammate tasks (can start NOW; none of them is building)
-- **Science member:** (1) replace secondary sources by primary NASA or journal pages (list: SCIENCE_MAP.md Part G item 1); (2) confirm Stage 2 blood-pressure thresholds from AHA/ACC; (3) verify "Medical-701" and the 2025 Standard Measures paper before anyone cites them; (4) confirm the exact CONNECT "Openness" wording; (5) find a public first-aid source (e.g. Red Cross, AHA) for any step beyond calling help in the emergency flow; (6) if possible, a clinician reviews the DEMO rules and the emergency and behavioral lines.
-- **Content member:** review VIVA_SCRIPTS.md for tone and clarity (keep sentences short, no diagnosis).
-- **Marialena:** (1) prepare the presentation slides and share the first version with the Team Owner for review; (2) research the Point-of-Care Blood Analysis Concept (candidate markers, NASA study pages) and send sources to the science member for verification; nothing enters the app until verified.
-- **QA/docs member:** collect devices and browsers; test `speechSynthesis` voices on each; test with the network off; prepare the README structure and the AI-use log.
-Do NOT build or generate app code before Saturday 9:00 am.
