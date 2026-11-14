@@ -2,7 +2,7 @@
 
 **Project:** Vivonaut – Your Intelligent Health Companion in Space (NASA Space Apps Challenge 2026, Universal Event)
 **Team:** Vivonaut
-**Version:** 14 November 2026 (build record up to Phase 7)
+**Version:** 14 November 2026 (build record up to Phase 9; Phase 10 is added when it is finished)
 
 ## Disclosure statement
 
@@ -10,7 +10,7 @@ This project was built with assistance from Claude (Anthropic), an AI assistant.
 
 ## How the work was organised
 
-- **Build phases (Phases 0 to 7)** ran in a Claude Project on the Claude Pro account of team member Ailime. Each phase returned a numbered `index_vN.html` and an updated `STATE.md`; no one edited the code by hand.
+- **Build phases (Phases 0 to 9, and Phase 10 if built)** ran in a Claude Project on the Claude Pro account of team member Emilia Staffiero. Each phase returned a numbered `index_vN.html` and an updated `STATE.md`; no one edited the code by hand.
 - **Project support** (documents, submission checklist, independent browser tests of every build, review of wording and sources) ran in a separate Claude chat on the Team Owner's account.
 - All dates below are 14 November 2026 (the hackathon day) unless stated.
 
@@ -18,16 +18,18 @@ This project was built with assistance from Claude (Anthropic), an AI assistant.
 
 | Date | Phase | Account | What was generated | Reviewed and tested by |
 |---|---|---|---|---|
-| 14 Nov 2026 | Phase 0 (architecture check, no code) | Ailime's Claude account (Claude Pro) | Architecture proposal and updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
-| 14 Nov 2026 | Phase 1 (skeleton, dashboard-first entry, profiles, voice test) | Ailime's Claude account (Claude Pro) | index_v1.html (CONFIG, DATA_MODEL, VIVA_ASSISTANT, BODY_MAP placeholder, SOURCES_ABOUT stub, ONBOARDING, UI_LAYOUT, styles), a browser test script, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
-| 14 Nov 2026 | Phase 2 (data, validation, context check, guide, charts, Vitals, demo data) | Ailime's Claude account (Claude Pro) | index_v2.html (new modules DEMO_DATA, VALIDATION, MEASUREMENT_GUIDE, CHARTS, VITALS; changed CONFIG, DATA_MODEL, VIVA_ASSISTANT, UI_LAYOUT, ONBOARDING; new style VITALS), a Node logic test and a browser test script, updated STATE.md, new text for PROJECT_BRIEF section 19 | Team: opened offline in a browser, developer-panel tests, independent browser checks |
-| 14 Nov 2026 | Phase 3 (rules engine, Monitoring Status, alerts, follow-up, link status, developer panel) | Ailime's Claude account (Claude Pro) | index_v3.html (new modules RULES_ENGINE, FOLLOWUP, DEV_PANEL; changed CONFIG, DATA_MODEL, DEMO_DATA, VIVA_ASSISTANT, VALIDATION, VITALS, UI_LAYOUT; style VITALS extended), Node and browser test scripts, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
-| 14 Nov 2026 | Phase 4 (body map, privacy view, dashboard wiring) | Ailime's Claude account (Claude Pro) | index_v4.html (rewritten BODY_MAP; changed RULES_ENGINE, FOLLOWUP, UI_LAYOUT, VIVA_ASSISTANT, DEV_PANEL, CONFIG; new style BODY_MAP), Node test logic4.js and browser test phase4.py, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
-| 14 Nov 2026 | Phase 5 (Viva dialogue manager, Ask Viva, voice, reminders, robot states) | Ailime's Claude account (Claude Pro) | index_v5.html (rewritten VIVA_ASSISTANT; changed CONFIG, ONBOARDING, UI_LAYOUT, FOLLOWUP, VITALS, SOURCES_ABOUT, BODY_MAP (BOD-09); new style VIVA), browser test tests/phase5.py, updated phase1 and phase4 tests, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
-| 14 Nov 2026 | Phase 6 (Health Handover, Emergency Center, privacy filter for the handover and the report queue, TIP-02 hidden) | Ailime's Claude account (Claude Pro) | index_v6.html (new modules HANDOVER_REPORTS and EMERGENCY; changed CONFIG, FOLLOWUP, UI_LAYOUT, VIVA_ASSISTANT, DEV_PANEL; new styles HANDOVER and EMERGENCY), browser test tests/phase6.py, updated phase1 to phase5 and logic3 tests, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
-| 14 Nov 2026 | Phase 6B (Blood results, simulated analyzer: fictional WBC fixture, trend, optional handover attachment, sources R1 to R5, D1, D4) | Ailime's Claude account (Claude Pro) | index_v6b.html (new module BIOMARKER_DEMO and style BIOMARKER_DEMO; changed VIVA_ASSISTANT, HANDOVER_REPORTS, UI_LAYOUT, SOURCES_ABOUT, DEV_PANEL, CONFIG), browser test tests/phase6b.py, updated phase1 and logic3 tests, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
-| 14 Nov 2026 | Phase 6C (Viva intent engine: safety layer, intent matching, data-grounded answers, session memory, "Why this answer?", blood answers through Vivo.Bio.summary()) | Ailime's Claude account (Claude Pro) | index_v6c.html (changed VIVA_ASSISTANT, VIVA style, SOURCES_ABOUT, DEV_PANEL, CONFIG), browser test tests/phase6c.py, updated phase1, phase5 and phase6b tests, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
-| 14 Nov 2026 | Phase 7 (guided demo, mission environments, vision and roadmap) | Ailime's Claude account (Claude Pro) | index_v7.html (modules GUIDED_DEMO, MISSION_ENV, VISION_ROADMAP; changes to related modules), updated tests and STATE.md | Team: browser test with the network off; independent check: 254 of 254 developer-panel tests pass, 0 console errors, 0 external requests |
+| 14 Nov 2026 | Phase 0 (architecture check, no code) | Emilia Staffiero's Claude account (Claude Pro) | Architecture proposal and updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
+| 14 Nov 2026 | Phase 1 (skeleton, dashboard-first entry, profiles, voice test) | Emilia Staffiero's Claude account (Claude Pro) | index_v1.html (CONFIG, DATA_MODEL, VIVA_ASSISTANT, BODY_MAP placeholder, SOURCES_ABOUT stub, ONBOARDING, UI_LAYOUT, styles), a browser test script, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
+| 14 Nov 2026 | Phase 2 (data, validation, context check, guide, charts, Vitals, demo data) | Emilia Staffiero's Claude account (Claude Pro) | index_v2.html (new modules DEMO_DATA, VALIDATION, MEASUREMENT_GUIDE, CHARTS, VITALS; changed CONFIG, DATA_MODEL, VIVA_ASSISTANT, UI_LAYOUT, ONBOARDING; new style VITALS), a Node logic test and a browser test script, updated STATE.md, new text for PROJECT_BRIEF section 19 | Team: opened offline in a browser, developer-panel tests, independent browser checks |
+| 14 Nov 2026 | Phase 3 (rules engine, Monitoring Status, alerts, follow-up, link status, developer panel) | Emilia Staffiero's Claude account (Claude Pro) | index_v3.html (new modules RULES_ENGINE, FOLLOWUP, DEV_PANEL; changed CONFIG, DATA_MODEL, DEMO_DATA, VIVA_ASSISTANT, VALIDATION, VITALS, UI_LAYOUT; style VITALS extended), Node and browser test scripts, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
+| 14 Nov 2026 | Phase 4 (body map, privacy view, dashboard wiring) | Emilia Staffiero's Claude account (Claude Pro) | index_v4.html (rewritten BODY_MAP; changed RULES_ENGINE, FOLLOWUP, UI_LAYOUT, VIVA_ASSISTANT, DEV_PANEL, CONFIG; new style BODY_MAP), Node test logic4.js and browser test phase4.py, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
+| 14 Nov 2026 | Phase 5 (Viva dialogue manager, Ask Viva, voice, reminders, robot states) | Emilia Staffiero's Claude account (Claude Pro) | index_v5.html (rewritten VIVA_ASSISTANT; changed CONFIG, ONBOARDING, UI_LAYOUT, FOLLOWUP, VITALS, SOURCES_ABOUT, BODY_MAP (BOD-09); new style VIVA), browser test tests/phase5.py, updated phase1 and phase4 tests, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
+| 14 Nov 2026 | Phase 6 (Health Handover, Emergency Center, privacy filter for the handover and the report queue, TIP-02 hidden) | Emilia Staffiero's Claude account (Claude Pro) | index_v6.html (new modules HANDOVER_REPORTS and EMERGENCY; changed CONFIG, FOLLOWUP, UI_LAYOUT, VIVA_ASSISTANT, DEV_PANEL; new styles HANDOVER and EMERGENCY), browser test tests/phase6.py, updated phase1 to phase5 and logic3 tests, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
+| 14 Nov 2026 | Phase 6B (Blood results, simulated analyzer: fictional WBC fixture, trend, optional handover attachment, sources R1 to R5, D1, D4) | Emilia Staffiero's Claude account (Claude Pro) | index_v6b.html (new module BIOMARKER_DEMO and style BIOMARKER_DEMO; changed VIVA_ASSISTANT, HANDOVER_REPORTS, UI_LAYOUT, SOURCES_ABOUT, DEV_PANEL, CONFIG), browser test tests/phase6b.py, updated phase1 and logic3 tests, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
+| 14 Nov 2026 | Phase 6C (Viva intent engine: safety layer, intent matching, data-grounded answers, session memory, "Why this answer?", blood answers through Vivo.Bio.summary()) | Emilia Staffiero's Claude account (Claude Pro) | index_v6c.html (changed VIVA_ASSISTANT, VIVA style, SOURCES_ABOUT, DEV_PANEL, CONFIG), browser test tests/phase6c.py, updated phase1, phase5 and phase6b tests, updated STATE.md | Team: opened offline in a browser, developer-panel tests, independent browser checks |
+| 14 Nov 2026 | Phase 7 (guided demo, mission environments, vision and roadmap) | Emilia Staffiero's Claude account (Claude Pro) | index_v7.html (modules GUIDED_DEMO, MISSION_ENV, VISION_ROADMAP; changes to related modules), updated tests and STATE.md | Team: browser test with the network off; independent check: 254 of 254 developer-panel tests pass, 0 console errors, 0 external requests |
+| 14 Nov 2026 | Phase 8 (mission tasks, weekly streak, goals, timeline, eight optional P1 checks) | Emilia Staffiero's Claude account (Claude Pro) | index_v8.html (modules TASKS_GAMIFICATION and TIMELINE, the optional checks, changes to related modules), browser test tests/phase8.py, updated earlier tests and STATE.md | Team: browser tests with the network off |
+| 14 Nov 2026 | Phase 9 (Sources and About with the full source list, the 12 required test cases, polish) | Emilia Staffiero's Claude account (Claude Pro) | index_final_v9.html (built from index_v8.html), browser test tests/phase9.py, updated tests and STATE.md | Team Owner: independent check of index_final_v9.html (console errors 0, requests that leave the file 0, developer-panel tests 254 of 254, Guided Demo runs to the end) |
 
 ## Documents and support (Team Owner's Claude account)
 
@@ -36,7 +38,8 @@ This project was built with assistance from Claude (Anthropic), an AI assistant.
 | 10 to 14 Nov 2026 | Drafting and merging of PROJECT_BRIEF.md, PROMPTS.md, VIVA_SCRIPTS.md and SCIENCE_MAP.md from the team's verified research and decisions | Team (science and content members checked sources and wording) |
 | 13 to 14 Nov 2026 | Submission requirements summary and checklist; NLSP reference selection draft (`nlsp_selection.csv`, summaries marked as drafts to check against the NLSP page) | Team Owner |
 | 14 Nov 2026 | Prompts for Phase 6B (Blood results) and Phase 6C (Viva Intelligence) | Team Owner |
-| 14 Nov 2026 | Independent browser tests of builds v1 to v7 (console errors, external requests, developer-panel tests, voice not spoken at load, no speech-recognition code) and review notes for each phase | Team Owner |
+| 14 Nov 2026 | Submission form text, RESOURCES.md, the repository README, the revised Phase 10 prompts and review notes | Team Owner |
+| 14 Nov 2026 | Independent browser tests of the builds the Team Owner sent for review (console errors, external requests, developer-panel tests, the Guided Demo) and review notes | Team Owner |
 
 ## Other tools
 
@@ -54,6 +57,6 @@ This project was built with assistance from Claude (Anthropic), an AI assistant.
 
 ## What was not generated by AI
 
-- The decision to build Vivonaut, its identity, the safety rules and the review decisions (the team, with the Team Owner's final say).
+- The decision to build Vivonaut, its identity and the review decisions (the team, with the Team Owner's final say). The safety rules and the project documents were drafted with AI assistance and then decided, checked and approved by the team.
 - The scientific source selection and verification (team science members).
-- The demo crew, readings and events are fictional and simulated; the application contains no real medical data and no NASA data.
+- The demo crew, readings and events are fictional and simulated; the application contains no real medical data and no NASA datasets. NASA resources are cited as references and are listed in `docs/RESOURCES.md`.
