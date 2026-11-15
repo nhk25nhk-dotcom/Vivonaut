@@ -7,6 +7,8 @@ Changes from v3.1 (final record): Phase 6B (Blood results, simulated analyzer) a
 
 Changes from v3: work happens inside a Claude Project (the four reference files live in Project Knowledge; STATE.md and index.html are attached per chat); relay rules for two Claude accounts (A.10); blood-analysis roadmap card added to Phase 7; optional Phase 10 (Ground Medical Dashboard); Phase 9 output saved as index_final_v9.html; new teammate tasks. Dashboard-first entry (14 Nov): Phase 1 no longer builds a welcome screen; the app opens on the dashboard with Viva's greeting and Start a Health Check in her panel, a Guided Demo button and a Help (?) button in the top bar.
 
+**Final status (15 Nov 2026):** these are the prompts and the plan the team worked from. Phases 6B (Blood results, simulated) and 6C (Viva intent engine) were added during the build, and Phase 10 below is the version that was actually run (10B, then 10A). The README and the application describe what was built.
+
 ---
 
 ## A. How to work (read once)
@@ -166,19 +168,56 @@ Done when: zero console errors; every button works or clearly says "roadmap"; al
 
 ---
 
-## PHASE 10 – Ground Medical Dashboard (OPTIONAL, only after Phase 9 is saved)
-Attach: PROJECT_BRIEF.md (sections 5, 10A, 15), STATE.md, SCIENCE_MAP.md (Part E only), VIVA_SCRIPTS.md (Parts 6.11 and 8B), latest `index_final_v9.html`.
-Start only if Phase 9 passed and at least 2 hours remain before the deadline. Work on a COPY. If it is not stable within 30 minutes, drop it and submit `index_final_v9.html`.
-Prompt: Implement GROUND_DASHBOARD: a small, read-only, simulated view of the ground team reviewing the Health Handover. No new rules, no new thresholds, no network, no server, no chat.
-- A "Ground view (simulation)" button on the Handover screen. A permanent label: "Simulated ground view. No real transmission." (GND-01).
-- It shows: link status (Live / Delayed / Blackout) from Mission Settings; the latest queued Health Handover (open it); the astronaut summary, current Monitoring Status, active alerts and changes from baseline, missing or unconfirmed data, and follow-ups. Reuse existing data and components.
-- Link behaviour (GND-02 to GND-05): Live, the report appears at once; Delayed, it appears after a simulated countdown using the environment's delay; Blackout, it stays "ready and queued, waiting for contact". The simulated "received" wording appears only here. Private wellbeing answers appear only if consent was given in the handover (GND-06).
-- The app gives no medical advice from the ground side. Mention the simulation in Sources/About.
-Done when: from the Handover screen the ground view shows the queued report with the correct link state; nothing says "sent" except the simulated "received"; no console errors; the 12 Phase 9 test cases still pass.
+## PHASE 10 – Ground view (10B) first, then Mission Day Briefing (10A). This is the version that was run.
+
+Order: run 10B FIRST (it finishes the story astronaut, handover, ground team, and it does not change the Dashboard), then 10A only if time allows. Each one is its own chat and its own COPY of the file. Nothing here touches the Guided Demo scenarios, BIOMARKER_DEMO or any rule.
+Build on the file where the AI-use accounts are already filled in, and start with the condensed STATE.md.
+For BOTH phases: re-run the Phase 7 tests and every earlier suite, and confirm the Guided Demo is unchanged (same captions and step times, so still about 2 minutes 15 seconds).
+Start only after: Phase 9 saved, the Team Owner has tested index_final_v9.html on a real phone, and the AI-use accounts are filled in.
+Always attach: STATE.md (the condensed one), the latest working index file.
+Stop-loss: if a phase is not stable within its time box, drop it. The submission candidate stays the last file that passed every suite.
 
 ---
 
-## D. Judge-test checklist
+### PHASE 10A – Mission Day Briefing (run second; time box: 90 minutes; built from the 10B file if 10B was accepted, otherwise from the accounts-filled v9; output: index_final_v10a.html)
+Attach also: PROJECT_BRIEF.md (sections 5, 12, 15), VIVA_SCRIPTS.md (Part 2).
+Prompt: Implement MISSION_BRIEFING: one compact card at the top of the Dashboard, titled "Today, Mission Day {n}" (the number comes from the mission day the app already holds, the same one the top bar shows; if the app holds none, the title has no number and the card never invents one), that gathers what the app already knows into one calm summary. No new rules, thresholds, indicators or data. Everything is read from existing modules; a line appears only if there is data for it; Viva never mentions a value she has not been given.
+Content, in this order:
+1. Due today: the measurements and tasks due today (from the mission tasks and reminders), as a count and names. Tasks that depend on hidden private indicators (mood, stress, fatigue, connection) are never counted or named while the private cards are hidden.
+2. What changed: the current Monitoring Status summary and up to three changes from the person's own baseline, each with the status label the engine already produced. If nothing changed, use the existing steady line only when the engine produced it. If data is missing, say what is missing (as the app already does) instead.
+3. Follow-ups waiting, with the time they are due.
+4. Handover: "No handover prepared yet" or the latest handover status, which is "ready and queued, not sent".
+Three buttons: "Start daily check" (same action as the existing daily check-in chip), "Review what changed" (one fixed rule: it opens the Alerts card when at least one alert or follow-up is active, otherwise the Trends screen), "Prepare handover" (opens the Handover screen; it does not generate anything by itself).
+Rules:
+- Privacy: hidden private items are never counted, named or hinted at (use the existing privacy view). New profile: show "Start your first health check", no alerts, "No data".
+- Text: template text built from the app's own lines. Any new wording is marked NEW (review) in STATE.md. Nothing is spoken at load. The card can be collapsed and the choice is kept for the session.
+- Phone: on a 360 by 640 px screen the Monitoring Status counts must still be visible without scrolling. On small screens the card starts collapsed to one line. A test checks this.
+- Layout: no horizontal overflow at 360, 375 and 1440 px; keyboard reachable; reduced motion respected; the card is hidden while the Guided Demo runs.
+- Vision screen: add one Working star "Mission Day briefing" and update the star counts and their test.
+- Update README and STATE only where they list what is built.
+Done when: tests/phase10a.py passes (the card on the steady demo, on the drift demo, on a new profile, with private cards hidden and revealed, after a profile switch, collapsed and expanded, at the three widths); every earlier suite still passes with only the intended expectation changes listed; 0 console errors; 0 requests that leave the file; offline launch works. Give me an updated condensed STATE.md and the list of changed modules.
+
+---
+
+### PHASE 10B – Ground view, simulation (run FIRST; time box: 90 minutes; built from the accounts-filled v9; output: index_final_v10b.html)
+Attach also: PROJECT_BRIEF.md (sections 5, 10A, 15), SCIENCE_MAP.md (Part E only), VIVA_SCRIPTS.md (Parts 6.11 and 8B).
+Wording: GND-01 to GND-06 already exist in VIVA_SCRIPTS.md Part 8B (use them word for word). Any other new line (no handover yet, the countdown announcements, the Close button) is NEW and is marked NEW (review) in STATE.md.
+Prompt: Implement GROUND_DASHBOARD: a small, read-only, simulated view of the ground team reviewing a Health Handover. No new rules, no new thresholds, no network, no server, no chat, no advice from the ground side.
+- Entry: a "Ground view (simulation)" button on the Handover screen. Permanent label on the view: "Simulated ground view. No real transmission." (GND-01).
+- It reads the latest handover from the existing store and shows it with the existing report component. It also shows the link state (Live, Delayed or Blackout) from the mission settings, with the environment's delay wording from the existing environment module and DST-1.
+- Privacy: the view must use the SAME consent filter as the Handover (HND-09). Do not write a second filter. Private answers appear only if the owner chose "Include" for that handover (GND-06).
+- Link behaviour (GND-02 to GND-05): Live, the report shows at once. Delayed, a short simulated countdown of at most 8 seconds, labelled with the simulated delay in minutes (never wait real minutes). Blackout, the report stays "ready and queued, waiting for contact".
+- The word "received" appears only in the labelled simulation line (GND-05), as a view state. The stored handover keeps `sent: false`. Do not write to the handover store, the queue or the alerts.
+- No handover yet: show a calm message that points to "Generate Health Handover". Emergency handovers and blood attachments appear exactly as the handover shows them.
+- Vision screen: add one Prototype star "Ground view (simulated)". The roadmap star "Secure transmission to flight surgeons" stays on the roadmap. Update the counts and their test. Mention the simulation in Sources and About, and update README and STATE where they say a ground-team view is not built.
+- Close: a clear "Close ground view" button at the top of the view returns to the Handover screen and puts focus back on the button that opened it. Escape also closes it.
+- Screen readers: the countdown is in a polite live region that announces only the start ("Simulated delay of N minutes, report arriving shortly") and the end ("Report shown (simulation)"), never every second. With reduced motion the countdown is shown as text.
+- Layout: no horizontal overflow at 360, 375 and 1440 px; keyboard reachable; reduced motion respected; works with the network off.
+Done when: tests/phase10b.py passes (Live, Delayed and Blackout; no handover; a handover with and without consent for private data; the stored handover unchanged and still `sent: false` after viewing; no new requests); every earlier suite still passes with only the intended changes listed; 0 console errors. Give me an updated condensed STATE.md and the list of changed modules.
+
+---
+
+## D. Judge-test checklist 
 - [ ] Opens offline from a double-click with the network off; no CDN, no console errors.
 - [ ] Opens directly on the dashboard; Viva greets in her panel; Guided Demo button visible in the top bar; Start a Health Check inside Viva's panel; Help (?) panel optional and dismissible; voice off.
 - [ ] Guided demo plays all three scenarios without breaking.
@@ -197,7 +236,7 @@ Done when: from the Handover screen the ground view shows the queued report with
 - [ ] Sources page complete; AI use disclosed.
 - [ ] Tested on a phone and a laptop; two browsers; with no voices available.
 
-## E. Submission checklist 
+## E. Submission checklist (Team Owner)
 - [ ] Project file/link works from a clean browser.
 - [ ] All data, tools, resources, code, text, images listed.
 - [ ] No copyrighted or restricted material (no NASA insignia, no stock photos, no real mission names with fictional crew).
@@ -205,3 +244,4 @@ Done when: from the Handover screen the ground view shows the queued report with
 - [ ] README included.
 - [ ] Submitted before Sunday 11:59 pm, with a safety margin.
 - [ ] Only the Team Owner submits.
+
