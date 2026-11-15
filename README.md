@@ -4,8 +4,8 @@ Vivonaut is an educational prototype of an astronaut health companion, built by 
 
 It is **not a medical device**. Viva, the companion, never diagnoses and never replaces the crew medical officer, a flight surgeon or approved mission medical procedures. It is not made, endorsed or reviewed by NASA.
 
-**Live demo:** ADD_GITHUB_PAGES_LINK
-**Project demo (slides):** ADD_SLIDES_LINK
+**Live demo:** https://nhk25nhk-dotcom.github.io/Vivonaut/
+**Project demo (slides):** https://drive.google.com/file/d/186Z0H8lL1_MLFrVSJZXvJUUbqwI_r6i6/view?usp=drive_link
 
 ## How to open it
 
@@ -81,7 +81,7 @@ Team Vivonaut: Khelifa Nour El Houda (Team Owner), Emilia Staffiero, Maria Eleni
 
 ## License
 
-Vivonaut's own code, text and original graphics are released under the [Apache License 2.0](LICENSE), an open source licence as defined by the Open Source Initiative (the same licence NASA applies by default to Space Apps solutions that do not name one).
+Copyright 2026 Team Vivonaut (Khelifa Nour El Houda, Emilia Staffiero, Maria Eleni Pouliou). Vivonaut's own code, text and original graphics are released under the [Apache License 2.0](LICENSE), an open source licence as defined by the Open Source Initiative (the same licence NASA applies by default to Space Apps solutions that do not name one).
 
 The application contains no third-party code, library, font, image, audio or dataset. The sources listed in [`docs/RESOURCES.md`](docs/RESOURCES.md) are cited as references and are not redistributed. The Space Apps participant terms are at https://www.spaceappschallenge.org/legal/.
 
