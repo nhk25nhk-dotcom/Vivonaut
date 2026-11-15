@@ -6,6 +6,8 @@ Changes from v2: Health Index replaced by Monitoring Status; baseline frozen aft
 
 Changes from v3 (13-14 Nov team decisions): new section 10A (Point-of-Care Blood Analysis Concept = roadmap card only; Earth-independent Health Handover confirmed as core; Ground Medical Dashboard = optional simulated demo, Phase 10, built last); safety rule 15.13; module GROUND_DASHBOARD; team workflow for two Claude accounts and the presentation slides (section 18). Dashboard-first entry (14 Nov): no welcome screen and no launch overlay; the app opens directly on the dashboard, Viva's panel carries the introduction and the Start a Health Check entry, the Guided Demo is a button in the top bar, and an optional dismissible Help panel replaces the intro screens (section 12). Blood glucose stays optional, manual entry only, built only if time allows.
 
+**Final status (15 Nov 2026):** this is the planning and decision record of the project. Phases 0 to 9 were built, plus Phase 10B (Ground view, simulation) and Phase 10A (Mission Day Briefing). The Ground Medical Dashboard described in section 10A item 3 was built as the Ground view (module GROUND_DASHBOARD). Where this document describes a plan that changed during the build, the README and the application (Sources and About) describe what was actually built.
+
 Changes from v3.1 (14 Nov 2026, final build): the blood-analysis idea grew from a roadmap card into an isolated, clearly simulated **Blood results** screen (Phase 6B, module BIOMARKER_DEMO, switch ENABLE_BIOMARKER_DEMO); Viva gained a free-text **Viva Intelligence** layer that stays on-device and rule-based (Phase 6C); Phases 6, 6B, 6C and 7 were built and tested (254 developer-panel tests). Where a section below says "roadmap card only" for blood analysis, section 10A item 2 is the current rule.
 
 ---
@@ -218,7 +220,7 @@ Reference mockup image is provided separately (dark space HUD); reinterpret it, 
 4. Voice output = `speechSynthesis`; voices vary by device, so test it **early** (Phase 1 and Phase 5), keep captions on, provide mute, voice and rate controls, and show SYS-06 when no voice exists.
 5. State in JS + `localStorage` wrapped in try/catch; the app must run if storage fails. Simulated data always labelled.
 6. Marked modules (each phase edits only its module): `/* ===== MODULE: NAME ===== */ ... /* ===== END MODULE: NAME ===== */`.
-   Modules: CONFIG, DATA_MODEL, VALIDATION (includes the context check), MEASUREMENT_GUIDE, RULES_ENGINE, FOLLOWUP, UI_LAYOUT, ONBOARDING, BODY_MAP, CHARTS, VIVA_ASSISTANT (includes ASK_VIVA and voice), TASKS_GAMIFICATION, EMERGENCY, MISSION_ENV, TIMELINE, HANDOVER_REPORTS, VISION_ROADMAP, GUIDED_DEMO, SOURCES_ABOUT, and the optional GROUND_DASHBOARD (Phase 10).
+   Modules: CONFIG, DATA_MODEL, VALIDATION (includes the context check), MEASUREMENT_GUIDE, RULES_ENGINE, FOLLOWUP, UI_LAYOUT, ONBOARDING, BODY_MAP, CHARTS, VIVA_ASSISTANT (includes ASK_VIVA and voice), TASKS_GAMIFICATION, EMERGENCY, MISSION_ENV, TIMELINE, HANDOVER_REPORTS, VISION_ROADMAP, GUIDED_DEMO, SOURCES_ABOUT, and GROUND_DASHBOARD and MISSION_BRIEFING (Phase 10, built), plus BIOMARKER_DEMO (Phase 6B, a simulated demonstration).
 7. Modules communicate through one shared state and an event bus: reading saved -> Validation + context check -> Rules Engine -> Alerts + Follow-up -> Dashboard / Body Map / Charts -> Viva (caption, optional voice) -> Handover data.
 8. Responsive 360 px to 1920 px. `prefers-reduced-motion`. Keyboard accessible. Good contrast. Never color alone (icon + text).
 9. Performance: instant load, no heavy loops.
@@ -268,9 +270,9 @@ Open science tasks (teammate): replace secondary sources with primary NASA or jo
 - Teammates produce **content**: science member (sources, verification), content member (Viva wording review), QA/docs (tests, README, credits, AI-use log).
 - Everything funnels into `STATE.md`. Save a numbered copy of `index.html` after every phase.
 - If the AI chat hits a limit: wait, or resume in a new chat using STATE.md + latest working file + the RESUME prompt in `PROMPTS.md`.
-- **Two Claude accounts (Team Owner and Ailime, who has Claude Pro):** there is always ONE main version of index.html. Whoever stops (limit reached or phase finished) sends the latest `index_vN.html` and the updated `STATE.md` to the other, who continues with the RESUME prompt. Nobody edits the code by hand. If phases 5, 6 and 7 are run in parallel, each person returns only their own modules and the Team Owner merges them into the main file.
+- **Two Claude accounts (Team Owner and Emilia Staffiero, who has Claude Pro):** there is always ONE main version of index.html. Whoever stops (limit reached or phase finished) sends the latest `index_vN.html` and the updated `STATE.md` to the other, who continues with the RESUME prompt. Nobody edits the code by hand. If phases 5, 6 and 7 are run in parallel, each person returns only their own modules and the Team Owner merges them into the main file.
 - **Presentation slides:** Marialena prepares the slides and shares the first version with the Team Owner for review.
-- **Optional Phase 10** (Ground Medical Dashboard) starts only after Phase 9 is saved as `index_final_v9.html`.
+- **Phase 10** (Ground view, then Mission Day Briefing) started only after Phase 9 was saved as `index_final_v9.html`, and both were built.
 
 ## 19. Required test cases (run before submitting)
 1. Invalid value (e.g. heart rate 700): rejected with a friendly message.
