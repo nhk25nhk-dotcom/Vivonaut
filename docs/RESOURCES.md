@@ -3,7 +3,7 @@
 **Project:** Vivonaut – Your Intelligent Health Companion in Space
 **Challenge:** Create Health Monitoring Software for Astronauts on Space Missions
 **Event:** NASA Space Apps Challenge 2026
-**Version:** 14 November 2026 (final record up to the Phase 7 build)
+**Version:** 15 November 2026 (final record, build up to Phase 10A)
 
 This file lists everything the team used to build Vivonaut: AI tools, scientific and institutional sources, and technical resources. Sources are grouped by purpose. Codes (S, M, I, D, E, R, X) are the codes shown on the application's Sources page.
 
@@ -270,6 +270,7 @@ These references informed the choice of health domains, indicators and monitorin
 - Fonts: system fonts only.
 - Images and icons: all drawn by the team as inline SVG. The Vivonaut logo and the Viva avatar are original designs. No NASA logo or insignia is used.
 - Data: all crew members, readings and events in the demo (Mark Anderson, Sebastian, "Demo Mars transit mission") are fictional and simulated.
+- Testing tools (used during the build, not part of the application): Playwright with headless Chrome, https://playwright.dev ; Node.js, https://nodejs.org
 
 ---
 
@@ -283,3 +284,11 @@ These references informed the choice of health domains, indicators and monitorin
 - Radiation doses shown in the application are simulated unless entered from a dosimeter.
 - Future ideas (such as real point-of-care blood analysis and a simulated ground-team view) are roadmap concepts or simulations. The Blood results screen uses a fictional fixture and is clearly labelled as a simulated analyzer. They are not implemented medical functions, and Vivonaut does not analyse blood or connect to real devices.
 - Vivonaut is an educational and health-monitoring prototype. It is not a certified medical device and does not replace professional medical assessment, the crew medical officer, flight surgeons or approved spacecraft medical procedures.
+
+---
+
+## 7. Licences of the materials used
+
+- Vivonaut's own code, text and original SVG graphics are released under the Apache License 2.0 (see `LICENSE`), an open source licence as defined by the Open Source Initiative.
+- The application contains no third-party code, library, font, image, audio or dataset. The sources in sections 2 to 4 are cited as references and are not copied or redistributed; the application links to them only when the user clicks.
+- The reference UI mockup generated with ChatGPT is not part of the application or of this repository.
