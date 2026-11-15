@@ -2,7 +2,7 @@
 
 **Project:** Vivonaut – Your Intelligent Health Companion in Space (NASA Space Apps Challenge 2026, Universal Event)
 **Team:** Vivonaut
-**Version:** 14 November 2026 (build record up to Phase 9; Phase 10 is added when it is finished)
+**Version:** 15 November 2026 (final record, build up to Phase 10A)
 
 ## Disclosure statement
 
@@ -10,9 +10,9 @@ This project was built with assistance from Claude (Anthropic), an AI assistant.
 
 ## How the work was organised
 
-- **Build phases (Phases 0 to 9, and Phase 10 if built)** ran in a Claude Project on the Claude Pro account of team member Emilia Staffiero. Each phase returned a numbered `index_vN.html` and an updated `STATE.md`; no one edited the code by hand.
+- **Build phases (Phases 0 to 10)** ran in a Claude Project on the Claude Pro account of team member Emilia Staffiero. Each phase returned a numbered `index_vN.html` and an updated `STATE.md`; no one edited the code by hand.
 - **Project support** (documents, submission checklist, independent browser tests of every build, review of wording and sources) ran in a separate Claude chat on the Team Owner's account.
-- All dates below are 14 November 2026 (the hackathon day) unless stated.
+- All dates below are 14 November 2026 (the hackathon day) unless stated. Phase 10A finished just after midnight on 15 November.
 
 ## Phase log (application code)
 
@@ -30,6 +30,8 @@ This project was built with assistance from Claude (Anthropic), an AI assistant.
 | 14 Nov 2026 | Phase 7 (guided demo, mission environments, vision and roadmap) | Emilia Staffiero's Claude account (Claude Pro) | index_v7.html (modules GUIDED_DEMO, MISSION_ENV, VISION_ROADMAP; changes to related modules), updated tests and STATE.md | Team: browser test with the network off; independent check: 254 of 254 developer-panel tests pass, 0 console errors, 0 external requests |
 | 14 Nov 2026 | Phase 8 (mission tasks, weekly streak, goals, timeline, eight optional P1 checks) | Emilia Staffiero's Claude account (Claude Pro) | index_v8.html (modules TASKS_GAMIFICATION and TIMELINE, the optional checks, changes to related modules), browser test tests/phase8.py, updated earlier tests and STATE.md | Team: browser tests with the network off |
 | 14 Nov 2026 | Phase 9 (Sources and About with the full source list, the 12 required test cases, polish) | Emilia Staffiero's Claude account (Claude Pro) | index_final_v9.html (built from index_v8.html), browser test tests/phase9.py, updated tests and STATE.md | Team Owner: independent check of index_final_v9.html (console errors 0, requests that leave the file 0, developer-panel tests 254 of 254, Guided Demo runs to the end) |
+| 14 Nov 2026 | Phase 10B (Ground view, simulation) and the change that fills the AI-use log account fields | Emilia Staffiero's Claude account (Claude Pro) | index_final_v9_accounts.html (v9 with only the account values filled), then index_final_v10b.html (new module GROUND_DASHBOARD and style GROUND; changes to HANDOVER_REPORTS, VIVA_ASSISTANT, VISION_ROADMAP, SOURCES_ABOUT, CONFIG), browser test tests/phase10b.py, updated earlier tests and STATE.md | Team: automated suites pass; the ground view is read-only and reuses the handover privacy filter |
+| 14 to 15 Nov 2026 | Phase 10A (Mission Day Briefing) | Emilia Staffiero's Claude account (Claude Pro) | index_final_v10a.html (new module MISSION_BRIEFING and style BRIEFING; changes to UI_LAYOUT, VIVA_ASSISTANT, VISION_ROADMAP, SOURCES_ABOUT, CONFIG), browser test tests/phase10a.py, updated earlier tests and STATE.md | Team Owner: independent check of index_final_v10a.html (console errors 0, requests that leave the file 0, developer-panel tests 254 of 254, Guided Demo runs to the end, ground view opens and closes, no horizontal overflow at 360 and 375 px). This is the submitted version, with one small display fix (see Documents and support). |
 
 ## Documents and support (Team Owner's Claude account)
 
@@ -38,7 +40,8 @@ This project was built with assistance from Claude (Anthropic), an AI assistant.
 | 10 to 14 Nov 2026 | Drafting and merging of PROJECT_BRIEF.md, PROMPTS.md, VIVA_SCRIPTS.md and SCIENCE_MAP.md from the team's verified research and decisions | Team (science and content members checked sources and wording) |
 | 13 to 14 Nov 2026 | Submission requirements summary and checklist; NLSP reference selection draft (`nlsp_selection.csv`, summaries marked as drafts to check against the NLSP page) | Team Owner |
 | 14 Nov 2026 | Prompts for Phase 6B (Blood results) and Phase 6C (Viva Intelligence) | Team Owner |
-| 14 Nov 2026 | Submission form text, RESOURCES.md, the repository README, the revised Phase 10 prompts and review notes | Team Owner |
+| 15 Nov 2026 | Final independent review of index_final_v10a.html found a display bug: the literal text "null" appeared in the Ground view when the link was Delayed. Fixed with a one-word change in the module GROUND_DASHBOARD (an empty string instead of null in one DOM append call), then re-checked: no stray "null", "undefined" or "NaN" on any screen, developer-panel tests 254 of 254, console errors 0. The submitted `index.html` is index_final_v10a.html plus this one change. | Team Owner |
+| 14 to 15 Nov 2026 | Submission form text, RESOURCES.md, the repository files (README, LICENSE, screenshots, document updates), the revised Phase 10 prompts and review notes | Team Owner |
 | 14 Nov 2026 | Independent browser tests of the builds the Team Owner sent for review (console errors, external requests, developer-panel tests, the Guided Demo) and review notes | Team Owner |
 
 ## Other tools
