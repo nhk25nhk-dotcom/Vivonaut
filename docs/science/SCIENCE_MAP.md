@@ -4,6 +4,8 @@ Merged science map for the NASA Space Apps Challenge 2026 project "Vivonaut – 
 Merges: 01 Radiation, 02 Gravity fields (microgravity), 03 Isolation and confinement, 04 Distance from Earth, 05 Hostile and closed environments, 00 Reference ranges.
 
 Status: all five NASA hazards researched; reference ranges done. Planning material, allowed before the hackathon starts. Written 10 Nov 2026. Revised the same day (v1.1) after the team review: radiation values no longer open the emergency screen, data-state and measurement-context rules added, MVP build set added.
+
+**Final status (15 Nov 2026):** this file was the source of every number, rule and source code used in the application. Part G lists the source checks and their status at the time of writing. A rule without a verified source is labelled DEMO in the application and is never attributed to NASA. Simulated values (including radiation dose) are always labelled as simulated.
 Revision v1.2 — 13 November 2026: Part G items 1–2 reviewed; source codes retained, direct NASA/journal references substituted, associated claims corrected. See Part I for the audit trail and limitations.
 Revision v1.5 — 14 November 2026 (final record): Part J added for the simulated Blood results screen (Phase 6B) and the Viva Intelligence wording rules (Phase 6C). No number, threshold, rule or source code in Parts A to I was changed.
 Revision v1.3 — 14 November 2026: Part G item 18 and one rule in F1 added for the roadmap-only Point-of-Care Blood Analysis Concept. No number, threshold or source code was changed; the DATA-4 wording follows the dashboard-first entry.
