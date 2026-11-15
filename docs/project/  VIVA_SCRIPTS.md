@@ -1,7 +1,7 @@
 # Vivonaut – VIVA_SCRIPTS.md
 
 All the words Viva says and shows: welcome messages, indicator explanations, measurement instructions, routine alerts, warnings, emergency screens and system messages.
-Built on SCIENCE_MAP.md (numbers, rule IDs, source codes) and PROJECT_BRIEF.md (persona, safety rules). Version 1.4, 14 Nov 2026 (final record: updated to match the build up to Phase 7; Part 10 lists the wording added during the build). English only.
+Built on SCIENCE_MAP.md (numbers, rule IDs, source codes) and PROJECT_BRIEF.md (persona, safety rules). Version 1.5, 15 Nov 2026 (final record: Part 10 lists the wording added up to Phase 7, Part 11 the wording added in Phase 10). English only.
 
 Status: draft scripts. The wording is ours; every number comes from SCIENCE_MAP.md and keeps its tag (SOURCED, DEMO, BASELINE). A clinician and a behavioral-health specialist should review Parts 6 and 7 before any use beyond the hackathon.
 
@@ -538,11 +538,11 @@ Short intro and outro for each scenario. Spoken by Viva or shown as a caption ba
 | ID | Where | Text |
 |---|---|---|
 | VIS-01 | Card title | "Point-of-Care Blood Analysis (concept)" |
-| VIS-02 | Card text | "In the future, a tiny blood or saliva sample could be read by a compact medical device on board. It could look at markers linked to bones, vitamin D, inflammation and glucose. This is an idea for the future. Vivonaut does not analyse blood today." |
-| VIS-03 | Card status | "Concept. Not built. It would need a certified device, scientific validation and funding." |
+| VIS-02 | Card text | "In the future, a tiny blood or saliva sample could be read by a compact medical device on board. It could look at markers linked to bones, vitamin D, inflammation and glucose. This is an idea for the future. Vivonaut connects to no device and analyses no real blood. The Blood results screen shows a simulated demonstration with fictional data." |
+| VIS-03 | Card status | "Concept. No real device. Only a simulated demonstration exists." |
 | VIS-04 | Why it matters | "Far from Earth, there is no hospital lab. Reading a small sample on board could help the crew and flight surgeons notice changes earlier." |
 
-### Ground Medical Dashboard (optional, Phase 10, simulation only)
+### Ground view (Phase 10B, built, simulation only)
 
 | ID | Where | Text |
 |---|---|---|
@@ -751,3 +751,41 @@ The application stores every line in one data object. The table lists each line 
 | WRN-24u | You reported vomiting and another symptom after the solar alert. Please contact your flight surgeon now, and rest in the shelter. |
 | WRN-35 | Your resting heart rate is up, you're sleeping less and you feel more tired. No single number is alarming, but together they look like a recovery strain pattern. Please rest, and tell me how you feel. |
 | WRN-35s | Your resting heart rate is up, you're sleeping less and you feel more tired, and you reported symptoms. Please contact your flight surgeon and tell a crewmate. |
+
+## 11. Wording added in Phase 10 (final build)
+
+All lines below are shown in the application. GND-01 to GND-06 are in Part 8B.
+
+### Ground view (Phase 10B)
+| ID | Text |
+|---|---|
+| GND-07 | "Simulated delay of {minutes} minutes, report arriving shortly." (announced once at the start) |
+| GND-08 | "Report shown (simulation)." (announced once at the end) |
+| GND-09 | "Simulated delay: about {minutes} minutes left." (visible countdown) |
+| GND-10 | "No handover yet. Generate one on the Handover screen with \"Generate Health Handover\", then open the ground view again." |
+| GND-11 | "Simulated delay: about {minutes} minutes. The report will be shown shortly." (reduced-motion text) |
+| GND-12 | "Close ground view" |
+
+### Mission Day Briefing (Phase 10A)
+| ID | Text |
+|---|---|
+| MBR-01 | "Today, Mission Day {n}" |
+| MBR-02 | "Today" (when the app holds no mission day number) |
+| MBR-03 | "Due today" |
+| MBR-04 | "{count} to do today: {names}." |
+| MBR-05 | "Everything on today's list is done." |
+| MBR-06 | "Next check-in: {label} at {when}." |
+| MBR-07 | "What changed" |
+| MBR-08 | "{name}: usual {usual}, latest {latest}. {status}." ({status} is the label the rules engine produced) |
+| MBR-09 | "Follow-ups waiting" |
+| MBR-10 | "{action} Due {when}." |
+| MBR-10n | "{action} Due now ({when})." |
+| MBR-11 | "Handover" |
+| MBR-12 | "No handover prepared yet" |
+| MBR-13 | "Prepared {when}." |
+| MBR-14 | "Start your first health check" (new profile) |
+| MBR-B1 | "Start daily check" |
+| MBR-B2 | "Review what changed" |
+| MBR-B3 | "Prepare handover" |
+| MBR-T1 | "Hide today's briefing" (screen-reader name) |
+| MBR-T2 | "Show today's briefing" (screen-reader name) |
